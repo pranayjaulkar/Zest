@@ -12,7 +12,7 @@ interface HomePageProps {}
 
 export const HomePage: React.FC<HomePageProps> = async () => {
   const products = await getProducts({ isFeatured: true });
-  const billboard = await getBillboard("671962c5-fc7a-454b-aa23-27da26b8017b");
+  const billboard = await getBillboard("0ad33a60-a3a5-47ec-ba29-2c07cc297046");
   return (
     <div>
       <Navbar />

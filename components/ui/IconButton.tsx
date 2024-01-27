@@ -9,6 +9,7 @@ interface IconButtonProps {
 }
 
 export const IconButton: React.FC<IconButtonProps> = ({
+  icon,
   onClick,
   className,
 }) => {
@@ -19,7 +20,9 @@ export const IconButton: React.FC<IconButtonProps> = ({
         "rounded-full flex items-center justify-center bg-white shadow-md p-2 hover:scale-110 transition",
         className
       )}
-    ></button>
+    >
+      {icon}
+    </button>
   );
 };
 export default IconButton;
