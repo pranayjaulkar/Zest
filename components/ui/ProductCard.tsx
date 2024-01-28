@@ -12,7 +12,7 @@ interface ProductCardProps {
 export const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
   const router = useRouter()
   const handleClick = () => {
-    router.push(`/products/${data?.id}`);
+    router.push(`/product/${data?.id}`);
   };
   return (
     <div className="bg-white group rounded-xl border p-3 space-y-4">
