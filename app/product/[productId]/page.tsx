@@ -4,11 +4,12 @@ import ProductList from "@/components/ProductList";
 import Container from "@/components/ui/Container";
 import Gallery from "@/components/gallery/index";
 import Info from "@/components/ui/Info";
+import Button from "@/components/ui/Button";
+import { ShoppingCart } from "lucide-react";
 
 interface ProductPageProps {
   params: { productId: string };
 }
-
 export const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
   const product = await getProduct(params.productId);
   const suggestedProducts = await getProducts({
@@ -22,6 +23,12 @@ export const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
             <Gallery images={product.images} />
             <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
               <Info data={product} />
+              <div className="mt-10 flex items-center gap-x-3">
+                <Button className="flex items-center gap-x-2">
+                  Add to Cart
+                  <ShoppingCart />
+                </Button>
+              </div>
             </div>
           </div>
           <hr className="my-10" />

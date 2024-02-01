@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Container from "@/components/ui/Container";
 import Billboard from "@/components/Billboard";
 import getBillboard from "@/actions/getBillboard";
@@ -15,7 +13,6 @@ export const HomePage: React.FC<HomePageProps> = async () => {
   const billboard = await getBillboard("0ad33a60-a3a5-47ec-ba29-2c07cc297046");
   return (
     <div>
-      <Navbar />
       <Container>
         <div className="space-y-10 pb-10">
           <Billboard data={billboard} />
@@ -24,7 +21,6 @@ export const HomePage: React.FC<HomePageProps> = async () => {
           <ProductList title="Featured Products" items={products} />
         </div>
       </Container>
-      <Footer />
     </div>
   );
 };

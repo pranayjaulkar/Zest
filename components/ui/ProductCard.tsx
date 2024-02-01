@@ -28,7 +28,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
             <IconButton
               onClick={() => {}}
               icon={<Expand size={20} className="text-gray-600" />}
-            />{" "}
+            />
             <IconButton
               onClick={() => {}}
               icon={<ShoppingCart size={20} className="text-gray-600" />}
