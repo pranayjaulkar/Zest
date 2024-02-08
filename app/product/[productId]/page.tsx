@@ -6,15 +6,22 @@ import Gallery from "@/components/gallery/index";
 import Info from "@/components/ui/Info";
 import Button from "@/components/ui/Button";
 import { ShoppingCart } from "lucide-react";
+import useCart from "@/hooks/useCart";
+import { MouseEventHandler } from "react";
 
 interface ProductPageProps {
   params: { productId: string };
 }
 export const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
   const product = await getProduct(params.productId);
+  const cart = useCart();
   const suggestedProducts = await getProducts({
     categoryId: product?.category?.id,
   });
+  const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event?.stopPropagation();
+    cart.addItem(product);
+  };
   return (
     <div className="bg-white">
       <Container>

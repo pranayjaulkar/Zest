@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
 import ModalProvider from "@/providers/ModalProvider";
+import ToastProvider from "@/providers/toastProvider";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={urbanist.className}>
         <ModalProvider />
+        <ToastProvider />
         <Navbar />
         {children}
         <Footer />
