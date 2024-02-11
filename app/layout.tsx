@@ -4,26 +4,28 @@ import Footer from "@/components/Footer";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
 import ModalProvider from "@/providers/ModalProvider";
-import ToastProvider from "@/providers/toastProvider";
+import ToastProvider from "@/providers/ToastProvider";
+import getStore from "@/actions/getStore";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Store",
-  description: "Store",
-};
+export async function generateMetadata() {
+  const store = await getStore();
+  return { title: store.name, description: "" };
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const store = await getStore();
   return (
     <html lang="en">
       <body className={urbanist.className}>
         <ModalProvider />
         <ToastProvider />
-        <Navbar />
+        <Navbar store={store} />
         {children}
         <Footer />
       </body>

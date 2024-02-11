@@ -1,6 +1,6 @@
+"use client";
 import Container from "@/components/ui/Container";
 import useCart from "@/hooks/useCart";
-import { createWriteStream } from "fs";
 import CartItem from "./components/CartItem";
 import Summary from "./components/Summary";
 

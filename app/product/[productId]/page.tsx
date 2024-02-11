@@ -4,24 +4,18 @@ import ProductList from "@/components/ProductList";
 import Container from "@/components/ui/Container";
 import Gallery from "@/components/gallery/index";
 import Info from "@/components/ui/Info";
-import Button from "@/components/ui/Button";
-import { ShoppingCart } from "lucide-react";
-import useCart from "@/hooks/useCart";
-import { MouseEventHandler } from "react";
+import AddToCart from "./(components)/AddToCart";
 
 interface ProductPageProps {
   params: { productId: string };
 }
 export const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
   const product = await getProduct(params.productId);
-  const cart = useCart();
+
   const suggestedProducts = await getProducts({
     categoryId: product?.category?.id,
   });
-  const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
-    event?.stopPropagation();
-    cart.addItem(product);
-  };
+
   return (
     <div className="bg-white">
       <Container>
@@ -30,12 +24,7 @@ export const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
             <Gallery images={product.images} />
             <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
               <Info data={product} />
-              <div className="mt-10 flex items-center gap-x-3">
-                <Button className="flex items-center gap-x-2">
-                  Add to Cart
-                  <ShoppingCart />
-                </Button>
-              </div>
+              <AddToCart data={product} />
             </div>
           </div>
           <hr className="my-10" />
