@@ -2,12 +2,12 @@
 
 import usePreviewModal from "@/hooks/usePreviewModal";
 import Modal from "@/components/ui/modal";
-import { Gallery } from "@/components/gallery/index";
+import Gallery from "@/components/gallery/index";
 import Info from "@/components/ui/Info";
 
 interface PreviewModalProps {}
 
-export const PreviewModal: React.FC<PreviewModalProps> = () => {
+const PreviewModal: React.FC<PreviewModalProps> = () => {
   const previewModal = usePreviewModal();
   const product = usePreviewModal((state) => state.data);
 

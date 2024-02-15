@@ -9,7 +9,7 @@ interface AddToCartProps {
   data: Product;
 }
 
-export const AddToCart: React.FC<AddToCartProps> = ({ data }) => {
+const AddToCart: React.FC<AddToCartProps> = ({ data }) => {
   const cart = useCart();
   const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
     event?.stopPropagation();

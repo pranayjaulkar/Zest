@@ -7,7 +7,7 @@ import Button from "@/components/ui/Button";
 import Currency from "@/components/ui/Currency";
 import useCart from "@/hooks/useCart";
 
-export const Summary = () => {
+const Summary = () => {
   const searchParams = useSearchParams();
   const items = useCart((state) => state.items);
   const removeAll = useCart((state) => state.removeAll);

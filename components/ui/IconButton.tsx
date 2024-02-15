@@ -8,7 +8,7 @@ interface IconButtonProps {
   className?: string;
 }
 
-export const IconButton: React.FC<IconButtonProps> = ({
+const IconButton: React.FC<IconButtonProps> = ({
   icon,
   onClick,
   className,

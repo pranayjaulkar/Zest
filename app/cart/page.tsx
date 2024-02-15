@@ -6,7 +6,7 @@ import Summary from "./components/Summary";
 
 interface CartPageProps {}
 
-export const CartPage: React.FC<CartPageProps> = () => {
+const CartPage: React.FC<CartPageProps> = () => {
   const cart = useCart();
 
   return (

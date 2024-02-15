@@ -8,7 +8,7 @@ export const revalidate = 0;
 
 interface HomePageProps {}
 
-export const HomePage: React.FC<HomePageProps> = async () => {
+const HomePage: React.FC<HomePageProps> = async () => {
   const products = await getProducts({ isFeatured: true });
   const billboard = await getBillboard("0ad33a60-a3a5-47ec-ba29-2c07cc297046");
   return (

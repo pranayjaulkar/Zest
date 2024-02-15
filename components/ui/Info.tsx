@@ -6,7 +6,7 @@ interface InfoProps {
   data: Product;
 }
 
-export const Info: React.FC<InfoProps> = ({ data }) => {
+const Info: React.FC<InfoProps> = ({ data }) => {
   return (
     <div>
       <h1 className="text-3xl font-bold text-gray-400">{data.name}</h1>

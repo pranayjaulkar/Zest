@@ -8,7 +8,7 @@ interface MainNavbarProps {
   data: Category[];
 }
 
-export const MainNavbar: React.FC<MainNavbarProps> = ({ data }) => {
+const MainNavbar: React.FC<MainNavbarProps> = ({ data }) => {
   const pathname = usePathname();
   const routes = data.map((route) => ({
     href: `/category/${route.id}`,

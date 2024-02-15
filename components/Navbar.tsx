@@ -9,7 +9,7 @@ interface NavbarProps {
   store: Store;
 }
 
-export const Navbar: React.FC<NavbarProps> = async ({ store }) => {
+const Navbar: React.FC<NavbarProps> = async ({ store }) => {
   const categories = await getCategories();
   return (
     <div className="border-b">

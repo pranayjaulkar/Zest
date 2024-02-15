@@ -11,7 +11,7 @@ interface FilterProps {
   valueKey: string;
 }
 
-export const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
+const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const selectedValue = searchParams.get(valueKey);

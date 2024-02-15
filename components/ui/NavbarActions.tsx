@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 interface NavbarActionsProps {}
 
-export const NavbarActions: React.FC<NavbarActionsProps> = () => {
+const NavbarActions: React.FC<NavbarActionsProps> = () => {
   const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
   const cart = useCart();

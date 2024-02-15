@@ -15,7 +15,7 @@ interface CategoryProps {
 }
 export const revalidate = 0;
 
-export const Category: React.FC<CategoryProps> = async ({
+const Category: React.FC<CategoryProps> = async ({
   params,
   searchParams,
 }) => {

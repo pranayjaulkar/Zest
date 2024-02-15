@@ -4,7 +4,7 @@ interface CurrencyProps {
   value?: string | number;
 }
 
-export const Currency: React.FC<CurrencyProps> = ({ value }) => {
+const Currency: React.FC<CurrencyProps> = ({ value }) => {
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     setIsMounted(true);

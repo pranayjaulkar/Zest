@@ -12,7 +12,7 @@ interface ProductCardProps {
   data: Product;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
   const previewModal = usePreviewModal();
   const cart = useCart();
   const router = useRouter();

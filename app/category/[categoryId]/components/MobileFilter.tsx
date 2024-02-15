@@ -12,7 +12,7 @@ interface MobileFilterProps {
   colors: Color[];
 }
 
-export const MobileFilter: React.FC<MobileFilterProps> = ({
+const MobileFilter: React.FC<MobileFilterProps> = ({
   sizes,
   colors,
 }) => {

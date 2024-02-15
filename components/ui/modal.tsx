@@ -11,7 +11,7 @@ interface ModalProps {
   children: React.ReactNode;
 }
 
-export const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
+const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
   return (
     <Transition show={open} appear as={Fragment}>
       <Dialog className="relative z-10" as="div" onClose={onClose}>
